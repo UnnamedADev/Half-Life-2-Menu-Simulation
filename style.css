@@ -1,1 +1,7 @@
 html, body {margin: 0; padding: 0;}
+
+body {background: url("images/background1.png");}
+
+.main_title {color: white;}
+
+.main_menu {color: white; list-style-type: none;}
