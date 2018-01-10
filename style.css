@@ -1,7 +1,24 @@
-html, body {margin: 0; padding: 0;}
+@font-face {
+    font-family: title_font;
+    src: url("fonts/halflife2.ttf");
+}
 
-body {background: url("images/background1.png");}
+html, body {
+    margin: 0; 
+    padding: 0;}
+body {
+    background: url("images/background1.png");}
 
-.main_title {color: white;}
+.main_title {
+    color: #aaa; 
+    font-family: title_font;
+    font-size: 3.5em;}
 
-.main_menu {color: white; list-style-type: none;}
+.main_menu {
+    color: white; 
+    list-style-type: none;
+    font-family: calibri;
+    font-variant: small-caps;
+    text-transform: lowercase;
+    font-size:1.05em;}
+.main_menu > li {margin: 0.5em 0px;}
