@@ -47,15 +47,12 @@ body {
     margin-top: 20%;
     width: auto;
     color: white;
-    background: orange;
     font-variant: small-caps;
     text-transform: lowercase;
     border-radius: 7px;
     background: rgba(190,190,190,0.80);
 }
-.dialog_action {
-background: green;
-}
+
 .dialog_title {
     color: white; 
     float:left;
@@ -69,15 +66,44 @@ background: green;
     width: 10px; height: 10px;
     margin-top: 7px; margin-right: 12px;
 }
+.dialog_action {
+    text-align: right;
+}
 .dialog_dynamic_content {
-    background: red;float: left;}
+    float: left;
+    margin: -10px 25px 10px 25px;}
 
 /* SPECIFED CONTENT */
-.window_newGame {}
-.window_newGame > hr {}
-.window_newGame > table {
-    border-spacing: 0;}
-.window_newGame > table > tbody > tr:nth-child(2) > td > img {border: 10px solid black;}
+.window_newGame {text-align: right;}
+.window_newGame hr {
+    position: relative;
+    color: black; 
+    background: black;
+    height: 1px;
+    opacity: 0.3;
+width: 94%;}
+.window_newGame table {
+    border-spacing: 15px 3px;
+    text-align: left;
+    border-collapse: separate;}
+.window_newGame  p {
+    padding: 0; 
+    margin: 0;
+    line-height: 1em;
+    font-weight: normal;
+    font-size: 1.1em;}
+.window_newGame button {
+    margin-right: 15px;
+    color: white;
+    font-family: arial;
+    border: 1px outset;
+    border-color: #ccc #bbb #bbb #ccc;
+    border-radius: 2px;
+    padding: 3px 5px;
+    background: rgba(0,0,0,0.05);
+}
+.window_newGame > table > tbody > tr:nth-child(2) > td > img {
+    border: 10px solid black;}
 
 .window_loadGame {}
 
