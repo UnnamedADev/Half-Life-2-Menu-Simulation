@@ -66,7 +66,9 @@ body {
     font-size: 0.95em;
     font-weight: normal;
     padding: 0px;
-    margin-top: 3px; margin-left: -12px;}
+    margin-top: 3px; margin-left: -12px;
+    cursor: default;}
+.dialog_title:hover {color: rgba(230,230,230,1);}
 .dialog_close {
     width: 10px; height: 10px;
     margin-top: 7px; margin-right: -12px;

@@ -42,5 +42,11 @@ document.addEventListener("DOMContentLoaded", function(){
         newClose.classList.add("dialog_close");
         newClose.setAttribute("src","images/icon1.png");
         newContainer.appendChild(newClose);
+        newClose.addEventListener("mouseenter", function(){
+            this.setAttribute("src", "images/icon2.png");
+        });
+        newClose.addEventListener("mouseleave", function(){
+            this.setAttribute("src", "images/icon1.png");
+        });
     }
 });
