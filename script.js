@@ -2,10 +2,10 @@
 
 document.addEventListener("DOMContentLoaded", function(){
 
-    //main
+    // ### MAIN
     addEvents();
     
-    //functions
+    // ### FUNCTIONS
     function addEvents(){
         
         var gameMenu = document.getElementsByClassName("main_menu")[0];
@@ -42,11 +42,17 @@ document.addEventListener("DOMContentLoaded", function(){
         newClose.classList.add("dialog_close");
         newClose.setAttribute("src","images/icon1.png");
         newContainer.appendChild(newClose);
-        newClose.addEventListener("mouseenter", function(){
+        addCloseButtonEvent(newClose);
+        
+    }
+    
+    function addCloseButtonEvent(closeButton){
+        closeButton.addEventListener("mouseenter", function(){
             this.setAttribute("src", "images/icon2.png");
         });
-        newClose.addEventListener("mouseleave", function(){
+        closeButton.addEventListener("mouseleave", function(){
             this.setAttribute("src", "images/icon1.png");
         });
     }
+    
 });
