@@ -28,29 +28,56 @@ document.addEventListener("DOMContentLoaded", function(){
         var newWindow = document.createElement("div");
         newWindow.classList.add("dialog_window");
         pageBody.appendChild(newWindow);
-        // ### container inside
-        var newContainer = document.createElement("div");
-        newContainer.classList.add("dialog_container");
-        newWindow.appendChild(newContainer);
+
+        // ### action
+        var newAction = document.createElement("div");
+        newAction.classList.add("dialog_action");
+        newWindow.appendChild(newAction);
+        
         // ### title
         var newTitle = document.createElement("h2");
         newTitle.classList.add("dialog_title");
-        newContainer.appendChild(newTitle);
+        newAction.appendChild(newTitle);
         newTitle.innerHTML = clickedObj.innerHTML;
         // ### close
         var newClose = document.createElement("img");
         newClose.classList.add("dialog_close");
         newClose.setAttribute("src","images/icon1.png");
-        newContainer.appendChild(newClose);
+        newAction.appendChild(newClose);
         
         addCloseButtonEvent(newClose);
         
         // ### dynamic content
         var newDynamicContent = document.createElement("div");
         newDynamicContent.classList.add("dialog_dynamic_content");
-        newContainer.appendChild(newDynamicContent);
+        newWindow.appendChild(newDynamicContent);
         
-        newDynamicContent.innerHTML=content[0];
+        var clickedName = clickedObj.innerHTML;
+        switch(clickedName){
+            case "new game":
+                newDynamicContent.innerHTML=content[clickedName];
+                newDynamicContent.classList.add("window_newGame");
+                break;
+            case "load game":
+                newDynamicContent.innerHTML=content[clickedName];
+                newDynamicContent.classList.add("window_loadGame");
+                break;
+            case "achievements":
+                newDynamicContent.innerHTML=content[clickedName];
+                newDynamicContent.classList.add("window_achievements");
+                break;
+            case "options":
+                newDynamicContent.innerHTML=content[clickedName];
+                newDynamicContent.classList.add("window_options");
+                break;
+            case "quit":
+                newDynamicContent.innerHTML=content[clickedName];
+                newDynamicContent.classList.add("window_quit");
+                break;
+            default:
+                console.log("DEFAULT");
+        }
+    
     }
     
     function addCloseButtonEvent(closeButton){
