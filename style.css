@@ -5,14 +5,19 @@
 
 html, body {
     margin: 0; 
-    padding: 0;}
+    padding: 0;
+    max-height: 100%;
+    max-width: 100%;}
 body {
     background: url("images/background1.png");}
 
 .main_title {
-    color: #aaa; 
+    color: rgba(255,255,255,1); 
     font-family: title_font;
-    font-size: 3.5em;}
+    font-size: 3.5em;
+    position: absolute;
+    top: 33%; left: 6%;
+    z-index: 10;}
 
 .main_menu {
     color: white; 
@@ -20,5 +25,13 @@ body {
     font-family: calibri;
     font-variant: small-caps;
     text-transform: lowercase;
-    font-size:1.05em;}
-.main_menu > li {margin: 0.5em 0px;}
+    font-size:1.1em;
+    font-weight: 500;
+    letter-spacing: 1px;
+    position: absolute;
+    top: 45%; left: 6%;
+    z-index: 10;
+    text-align: left;}
+
+.main_menu > li {margin: 0.5em -40px;}
+.main_menu > li > a {}
