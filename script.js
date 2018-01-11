@@ -1,7 +1,7 @@
 "use strict";
 
 document.addEventListener("DOMContentLoaded", function(){
-
+    
     // ### MAIN
     addEvents();
     
@@ -42,8 +42,15 @@ document.addEventListener("DOMContentLoaded", function(){
         newClose.classList.add("dialog_close");
         newClose.setAttribute("src","images/icon1.png");
         newContainer.appendChild(newClose);
+        
         addCloseButtonEvent(newClose);
         
+        // ### dynamic content
+        var newDynamicContent = document.createElement("div");
+        newDynamicContent.classList.add("dialog_dynamic_content");
+        newContainer.appendChild(newDynamicContent);
+        
+        newDynamicContent.innerHTML=content[0];
     }
     
     function addCloseButtonEvent(closeButton){
@@ -52,6 +59,11 @@ document.addEventListener("DOMContentLoaded", function(){
         });
         closeButton.addEventListener("mouseleave", function(){
             this.setAttribute("src", "images/icon1.png");
+        });
+        closeButton.addEventListener("click", function(){
+            var pageBody = document.getElementsByTagName("body")[0];
+            var dialogWindow = document.getElementsByClassName("dialog_window")[0];
+            pageBody.removeChild(dialogWindow);
         });
     }
     

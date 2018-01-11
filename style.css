@@ -74,3 +74,6 @@ body {
     margin-top: 7px; margin-right: -12px;
     float: right;
 }
+.dialog_dynamic_content {
+    width: 100%;
+    background: red; float: left;}
