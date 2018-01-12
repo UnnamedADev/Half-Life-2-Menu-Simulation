@@ -25,55 +25,26 @@ document.addEventListener("DOMContentLoaded", function(){
         var pageBody = document.getElementsByTagName("body")[0];
         // ### background div
         refreshMask(true);
-        // ### dialog window
-        var newWindow = document.createElement("div");
-        newWindow.classList.add("dialog_window");
-        pageBody.appendChild(newWindow);
-
-        // ### action
-        var newAction = document.createElement("div");
-        newAction.classList.add("dialog_action");
-        newWindow.appendChild(newAction);
         
-        // ### title
-        var newTitle = document.createElement("h2");
-        newTitle.classList.add("dialog_title");
-        newAction.appendChild(newTitle);
-        newTitle.innerHTML = clickedObj.innerHTML;
-        // ### close
-        var newClose = document.createElement("img");
-        newClose.classList.add("dialog_close");
-        newClose.setAttribute("src","images/icon1.png");
-        newAction.appendChild(newClose);
-        
+        var newClose = document.getElementsByClassName("dialog_close");
         addCloseButtonEvent(newClose);
         
         // ### dynamic content
-        var newDynamicContent = document.createElement("div");
-        newDynamicContent.classList.add("dialog_dynamic_content");
-        newWindow.appendChild(newDynamicContent);
         
         var clickedName = clickedObj.innerHTML;
         switch(clickedName){
             case "new game":
-                newDynamicContent.innerHTML=content[clickedName];
-                newDynamicContent.classList.add("window_newGame");
+                
                 break;
             case "load game":
-                newDynamicContent.innerHTML=content[clickedName];
-                newDynamicContent.classList.add("window_loadGame");
                 break;
             case "achievements":
-                newDynamicContent.innerHTML=content[clickedName];
-                newDynamicContent.classList.add("window_achievements");
                 break;
             case "options":
-                newDynamicContent.innerHTML=content[clickedName];
-                newDynamicContent.classList.add("window_options");
+                
                 break;
             case "quit":
-                newDynamicContent.innerHTML=content[clickedName];
-                newDynamicContent.classList.add("window_quit");
+
                 break;
             default:
                 console.log("DEFAULT");
@@ -82,18 +53,22 @@ document.addEventListener("DOMContentLoaded", function(){
     }
     
     function addCloseButtonEvent(closeButton){
-        closeButton.addEventListener("mouseenter", function(){
+        for(var i=0;i<closeButton.length;i++){
+            closeButton[i].addEventListener("mouseenter", function(){
             this.setAttribute("src", "images/icon2.png");
-        });
-        closeButton.addEventListener("mouseleave", function(){
-            this.setAttribute("src", "images/icon1.png");
-        });
-        closeButton.addEventListener("click", function(){
-            var pageBody = document.getElementsByTagName("body")[0];
-            var dialogWindow = document.getElementsByClassName("dialog_window")[0];
-            pageBody.removeChild(dialogWindow);
-            refreshMask(false);
-        });
+            });
+            closeButton[i].addEventListener("mouseleave", function(){
+                this.setAttribute("src", "images/icon1.png");
+            });
+            closeButton[i].addEventListener("click", function(){
+                var pageBody = document.getElementsByTagName("body")[0];
+                var dialogWindow = document.getElementsByClassName("dialog_window")[0];
+                pageBody.removeChild(dialogWindow);
+                // ### background div
+                refreshMask(false);
+            });
+        }
+        
     }
     
     function refreshMask(state){
