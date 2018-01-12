@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>v0.2.1 - Half Life 2 Menu Simulation</title>
+    <title>v0.2.2 - Half Life 2 Menu Simulation</title>
     <link rel="stylesheet" href="style.css">
     <script src="jquery-3.2.1.min.js"></script>
     <script src="script.js"></script>
@@ -21,20 +21,53 @@
     <!-- ### new game -->
     <div class="dialogWindow newGame">
         <div class="action">
-            <h2 class="title">new game</h2>
-            <img src="images/icon1.png">
+            <h1 class="title">new game</h1>
+            <img src="images/icon1.png" class="closeButton">
         </div>
         <div class="content">
             <hr>
             <table>
                 <tbody>
-                    
+                    <tr>
+                        <td>
+                            <p>chapter 1</p>
+                            <p>point insertion</p>
+                        </td>
+                        <td>
+                            <p>chapter 1</p>
+                            <p>point insertion</p>
+                        </td>
+                        <td>
+                            <p>chapter 1</p>
+                            <p>point insertion</p>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td><img src="images/chapters/chapter1.png"></td>
+                        <td><img src="images/chapters/chapter1.png"></td>
+                        <td><img src="images/chapters/chapter1.png"></td>
+                    </tr>
                 </tbody>
             </table>
             
-            <button class="steamButton">More</button>
+            <button class="steamButton">More &#62;</button>
             <hr>
             <button class="steamButton activeButton">Start new game</button>
+            <button class="steamButton">Cancel</button>
+        </div>
+    </div>
+    <!-- ### load game -->
+    <div class="dialogWindow loadGame">
+        <div class="action">
+            <h1 class="title">new game</h1>
+            <img src="images/icon1.png" class="closeButton">
+        </div>
+        <div class="content">
+            <div>
+                
+            </div>
+            <button class="steamButton">Delete</button>
+            <button class="steamButton">Load</button>
             <button class="steamButton">Cancel</button>
         </div>
     </div>

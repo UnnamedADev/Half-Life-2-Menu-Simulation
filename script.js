@@ -17,34 +17,34 @@ document.addEventListener("DOMContentLoaded", function(){
                 createDialogWindow(this);
             });
         }
+        
+        // ### close buttons events
+        addCloseButtonEvent();
     }
     
     function createDialogWindow(clickedObj){
         
-        var title = clickedObj.innerHTML;
-        var pageBody = document.getElementsByTagName("body")[0];
         // ### background div
         refreshMask(true);
         
-        var newClose = document.getElementsByClassName("dialog_close");
-        addCloseButtonEvent(newClose);
-        
-        // ### dynamic content
-        
+        var duration = 150;
+        // ### dialog windows
         var clickedName = clickedObj.innerHTML;
         switch(clickedName){
             case "new game":
-                
+                $(".newGame").fadeIn(duration);
                 break;
             case "load game":
+                $(".loadGame").fadeIn(duration);
                 break;
             case "achievements":
+                $(".achievements").fadeIn(duration);
                 break;
             case "options":
-                
+                $(".options").fadeIn(duration);
                 break;
             case "quit":
-
+                $(".quit").fadeIn(duration);
                 break;
             default:
                 console.log("DEFAULT");
@@ -53,21 +53,47 @@ document.addEventListener("DOMContentLoaded", function(){
     }
     
     function addCloseButtonEvent(closeButton){
-        for(var i=0;i<closeButton.length;i++){
-            closeButton[i].addEventListener("mouseenter", function(){
-            this.setAttribute("src", "images/icon2.png");
+        
+        var buttons = document.getElementsByClassName("closeButton");
+        
+        for(var i=0;i<buttons.length;i++){
+            
+            buttons[i].addEventListener("click",function(){
+                var allClass = this.parentElement.parentElement.className;
+            
+                var validClass = allClass.slice(13,allClass.length);
+                var validWindow = document.getElementsByClassName(validClass)[0];
+                $(validWindow).fadeOut(100);
+                
+               
+                
+                var dialogWindow = document.getElementsByClassName("dialogWindow");
+                var state = 0;
+                
+                for(var j=0;j<dialogWindow.length;j++){
+                    if(dialogWindow[j].offsetHeight>0){
+                        state++;
+                    }
+                }
+                
+                switch(state){
+                    case 1:
+                        refreshMask(false);
+                        state=0;
+                        break;
+                    default:
+                        state--;
+                        break;
+                }
             });
-            closeButton[i].addEventListener("mouseleave", function(){
+            buttons[i].addEventListener("mouseenter",function(){
+                this.setAttribute("src", "images/icon2.png");
+            });
+            buttons[i].addEventListener("mouseleave",function(){
                 this.setAttribute("src", "images/icon1.png");
             });
-            closeButton[i].addEventListener("click", function(){
-                var pageBody = document.getElementsByTagName("body")[0];
-                var dialogWindow = document.getElementsByClassName("dialog_window")[0];
-                pageBody.removeChild(dialogWindow);
-                // ### background div
-                refreshMask(false);
-            });
         }
+   
         
     }
     

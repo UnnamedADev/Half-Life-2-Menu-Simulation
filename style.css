@@ -4,6 +4,8 @@
     src: url("fonts/halflife2.ttf");
 }
 /* OVERALL SITE, TITLE AND MENU */
+button:focus {outline: none;}
+
 html, body {
     margin: 0; 
     padding: 0;
@@ -51,7 +53,7 @@ body {
 .activeButton {
     box-shadow: 0px 0px 0px 1px rgba(100,100,100,0.75);
 }
-.title {text-transform: uppercase; font-variant: small-caps; font-size: 0.8em;}
+.title {text-transform: uppercase; font-variant: small-caps; font-size: 0.75em;}
 /* MASK */
 .mask {
     display: none;
@@ -62,16 +64,27 @@ body {
 }
 /* DIALOG WINDOWS */
 .dialogWindow {
+    font-family: calibri;
     left: 40%; top: 20%;
     position: absolute;
     z-index: 20;
     width: auto;
-    
+    border-radius: 5px;
     background: rgba(200,200,200,0.7);
 }
-.action {background: green; margin-top: -17px;}
-.content {background: red; margin-top: -10px;}
+.dialogWindow hr {position: relative; height: 1px; background: rgba(0,0,0,0.3); opacity: 0.3; border-width: 2px;}
+.dialogWindow .action h1 {color: white; display: inline-block; margin: 0; padding: 0; margin-top: 10px; margin-left: 16px;}
+.dialogWindow .action img {width: 9px; display: inline-block; float: right; margin-top: 13px; margin-right: 16px;}
+.action {}
+.content {margin-top: -5px; padding: 5px 10px 20px 10px;}
 /* SPECIFED CONTENT */
+.newGame, .loadGame, .achivements, .options, .quit {display: none;}
+
+.newGame hr {width: 94%; margin-left: 3%;}
 .newGame .action {}
-.newGame .action h2 {color: white; display: inline-block; margin: 0; padding: 0; margin-top: 3px; margin-left: 6px;}
-.newGame .action img {width: 9px; display: inline-block; float: right; margin-top: 6px; margin-right: 6px;}
+
+.newGame .content {text-align: right;}
+.newGame .content table {text-align: left; border-spacing: 15px 5px;}
+.newGame .content table p {margin: 2px 0; padding: 0; text-transform: uppercase; font-variant: small-caps; font-size: 0.75em; color: white;}
+.newGame .content img {border: 8px solid black;}
+.newGame button {margin-right: 15px; margin-left: 10px; margin-top: 5px; padding-right: 30px;}
