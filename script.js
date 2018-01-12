@@ -23,7 +23,8 @@ document.addEventListener("DOMContentLoaded", function(){
         
         var title = clickedObj.innerHTML;
         var pageBody = document.getElementsByTagName("body")[0];
-        
+        // ### background div
+        refreshMask(true);
         // ### dialog window
         var newWindow = document.createElement("div");
         newWindow.classList.add("dialog_window");
@@ -91,7 +92,23 @@ document.addEventListener("DOMContentLoaded", function(){
             var pageBody = document.getElementsByTagName("body")[0];
             var dialogWindow = document.getElementsByClassName("dialog_window")[0];
             pageBody.removeChild(dialogWindow);
+            refreshMask(false);
         });
+    }
+    
+    function refreshMask(state){
+        var duration = 500;
+        var maskDiv = document.getElementsByClassName("mask")[0];
+        
+        switch(state){
+            case true:
+                $(maskDiv).fadeIn(duration);
+                break;
+            case false:
+                $(maskDiv).fadeOut(duration);
+                break;
+            default: console.log("default");
+        }
     }
     
 });
