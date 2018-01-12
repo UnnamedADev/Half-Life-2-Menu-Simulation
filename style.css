@@ -48,12 +48,45 @@ body {
     border: 1px outset;
     border-color: #ccc #bbb #bbb #ccc;
     border-radius: 2px;
-    padding: 3px 5px;
+    padding: 3px 30px 3px 5px;
     background: rgba(0,0,0,0.05);}
 .activeButton {
     box-shadow: 0px 0px 0px 1px rgba(100,100,100,0.75);
 }
 .title {text-transform: uppercase; font-variant: small-caps; font-size: 0.75em;}
+.scroll::-webkit-scrollbar {
+    width: 1em;
+}
+ 
+.scroll::-webkit-scrollbar-track {
+    background-color: rgba(255,255,255,0.4);
+    border: 1px outset;
+    border-color: #ccc #bbb #bbb #ccc;
+}
+ 
+.scroll::-webkit-scrollbar-thumb {
+    background-color: rgba(255,255,255,0.15);
+    border: 1px inset;
+    border-color: #ccc #bbb #bbb #ccc;
+}
+.scroll::-webkit-scrollbar-button:start {
+    border: 1px outset;
+    border-color: #ccc #bbb #bbb #ccc;
+    color: white;
+    background: url(images/arrow1.png);
+    background-size: 70%;
+    background-repeat: no-repeat;
+    background-position: center;
+}
+.scroll::-webkit-scrollbar-button:end {
+    border: 1px outset;
+    border-color: #ccc #bbb #bbb #ccc;
+    color: white;
+    background: url(images/arrow2.png);
+    background-size: 70%;
+    background-repeat: no-repeat;
+    background-position: center;
+}
 /* MASK */
 .mask {
     display: none;
@@ -64,6 +97,7 @@ body {
 }
 /* DIALOG WINDOWS */
 .dialogWindow {
+    color: white;
     font-family: calibri;
     left: 40%; top: 20%;
     position: absolute;
@@ -76,15 +110,30 @@ body {
 .dialogWindow .action h1 {color: white; display: inline-block; margin: 0; padding: 0; margin-top: 10px; margin-left: 16px;}
 .dialogWindow .action img {width: 9px; display: inline-block; float: right; margin-top: 13px; margin-right: 16px;}
 .action {}
-.content {margin-top: -5px; padding: 5px 10px 20px 10px;}
+.content {margin-top: -5px; padding: 5px 20px 16px 20px;}
 /* SPECIFED CONTENT */
 .newGame, .loadGame, .achivements, .options, .quit {display: none;}
 
 .newGame hr {width: 94%; margin-left: 3%;}
 .newGame .action {}
 
-.newGame .content {text-align: right;}
+.newGame .content {text-align: right; padding: 5px 10px 20px 10px !important;}
 .newGame .content table {text-align: left; border-spacing: 15px 5px;}
 .newGame .content table p {margin: 2px 0; padding: 0; text-transform: uppercase; font-variant: small-caps; font-size: 0.75em; color: white;}
 .newGame .content img {border: 8px solid black;}
-.newGame button {margin-right: 15px; margin-left: 10px; margin-top: 5px; padding-right: 30px;}
+.newGame button {margin-right: 15px; margin-left: 10px; margin-top: 5px;}
+
+.loadGame .content div {height: 400px; overflow-y: scroll; background: rgba(0,0,0,0.2); 
+border: 1px inset;
+border-color: #ccc #bbb #bbb #ccc;}
+.loadGame .content > p:first-child {margin-bottom: 5px; font-size: 0.9em; color: #ddd;}
+.loadGame .content table {border-spacing: 5px 10px;}
+.loadGame .content table img {border: 7px solid black; width: 180px;}
+.loadGame .content table td {vertical-align: top;}
+.loadGame .content table p {margin: 0; padding: 0; color: #ccc; font-size: 0.7em}
+.loadGame .content table td p:nth-of-type(1) {text-transform: uppercase; font-variant: small-caps;}
+.loadGame .content table td p:nth-of-type(2) {}
+.loadGame .content button {margin-top: 6px;}
+.loadGame .content button:nth-of-type(2), button:nth-of-type(3) {float: right;}
+.loadGame .content button:nth-of-type(2) {margin-right: 0;}
+.loadGame .content button:nth-of-type(1), button:nth-of-type(3) {color: black;}
