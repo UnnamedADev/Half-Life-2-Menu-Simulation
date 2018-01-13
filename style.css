@@ -163,7 +163,20 @@ margin: 0px; border: 1px inset; border-color: #ccc #bbb #bbb #ccc;
 padding: 5px;
 background-color: #666; color: white;}
 .achievements .content p:last-of-type input:checked{ background: url(images/checkbox1.png);
-    background-size: contain;
-}
+    background-size: contain;}
 
 .achievements .content button {float: right; margin-right: 0; margin-top: -25px;}
+
+.options .content ul {list-style-type: none; padding: 0;}
+.options .content ul > li {float: left;}
+.options .content ul > li > a {
+    border: 1px outset;
+    border-color: #ccc #bbb #bbb #ccc;
+    border-radius: 2px;
+    padding: 3px 30px 3px 5px;}
+
+.options .content .dynamicOptions {width: 400px; height: 300px; float: left;
+border: 1px outset;
+border-color: #ccc #bbb #bbb #ccc;
+border-radius: 2px;
+padding: 3px 30px 3px 5px;}
