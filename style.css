@@ -72,7 +72,6 @@ body {
 .scroll::-webkit-scrollbar-button:start {
     border: 1px outset;
     border-color: #ccc #bbb #bbb #ccc;
-    color: white;
     background: url(images/arrow1.png);
     background-size: 70%;
     background-repeat: no-repeat;
@@ -81,12 +80,14 @@ body {
 .scroll::-webkit-scrollbar-button:end {
     border: 1px outset;
     border-color: #ccc #bbb #bbb #ccc;
-    color: white;
     background: url(images/arrow2.png);
     background-size: 70%;
     background-repeat: no-repeat;
     background-position: center;
 }
+.scrollDiv {height: 350px; overflow-y: scroll; background: rgba(0,0,0,0.2); 
+border: 1px inset;
+border-color: #ccc #bbb #bbb #ccc;}
 /* MASK */
 .mask {
     display: none;
@@ -112,7 +113,7 @@ body {
 .action {}
 .content {margin-top: -5px; padding: 5px 20px 16px 20px;}
 /* SPECIFED CONTENT */
-.newGame, .loadGame, .achivements, .options, .quit {display: none;}
+.newGame, .loadGame, .achievements, .options, .quit {display: none;}
 
 .newGame hr {width: 94%; margin-left: 3%;}
 .newGame .action {}
@@ -123,12 +124,10 @@ body {
 .newGame .content img {border: 8px solid black;}
 .newGame button {margin-right: 15px; margin-left: 10px; margin-top: 5px;}
 
-.loadGame .content div {height: 400px; overflow-y: scroll; background: rgba(0,0,0,0.2); 
-border: 1px inset;
-border-color: #ccc #bbb #bbb #ccc;}
 .loadGame .content > p:first-child {margin-bottom: 5px; font-size: 0.9em; color: #ddd;}
 .loadGame .content table {border-spacing: 5px 10px;}
-.loadGame .content table img {border: 7px solid black; width: 180px;}
+.loadGame .content table img {border: 9px solid black; width: 180px;}
+.loadGame .content table tr td:nth-of-type(2) {padding-right: 100px;}
 .loadGame .content table td {vertical-align: top;}
 .loadGame .content table p {margin: 0; padding: 0; color: #ccc; font-size: 0.7em}
 .loadGame .content table td p:nth-of-type(1) {text-transform: uppercase; font-variant: small-caps;}
@@ -136,4 +135,35 @@ border-color: #ccc #bbb #bbb #ccc;}
 .loadGame .content button {margin-top: 6px;}
 .loadGame .content button:nth-of-type(2), button:nth-of-type(3) {float: right;}
 .loadGame .content button:nth-of-type(2) {margin-right: 0;}
-.loadGame .content button:nth-of-type(1), button:nth-of-type(3) {color: black;}
+
+.achievements .title {font-variant: normal; text-transform: capitalize; font-size: 0.7em;}
+.achievements .content {text-align: center;}
+.achievements .content .progress {width: 100%; background: rgba(20,20,20,1); padding-bottom: 7px; margin-top: 15px; margin-bottom: 15px;}
+.achievements .content .progress p {text-transform: capitalize; font-size: 0.75em 
+!important; margin: 3px 0px !important; padding: 0 !important;}
+.achievements .content .progress table {width: 97%; border-spacing: 0px; margin-left: 1.5%; vertical-align: top;}
+.achievements .content .progress table td:nth-of-type(1) {text-align: left;}
+.achievements .content .progress table td:nth-of-type(2) {text-align: right;}
+.achievements .progressBar {width: 97%; height: 15px; margin-left: 1.5%; background: rgba(100,100,100,1);}
+.achievements .progressBar div {height: 100%; background: rgba(158,195,59,1); width: 20%;}
+.achievements .content .scrollDiv {background: rgba(20,20,20,1);}
+.achievements .content .scroll table {border-spacing: 0px 5px; padding: 0px 8px; text-align: left;}
+.achievements .content .scroll table tr {background: rgba(60,60,60,1);}
+.achievements .content .scroll table td {vertical-align: top; padding: 5px 5px 1px 5px;}
+.achievements .content .scroll table tr td:nth-of-type(1) {border-top-left-radius: 5px; border-bottom-left-radius: 5px;}
+.achievements .content .scroll table tr td:nth-of-type(2) {padding-right: 100px;
+border-top-right-radius: 5px; border-bottom-right-radius: 5px;}
+.achievements .content .scroll table p {margin: 0; padding: 0; color: #eee; font-size: 0.7em}
+.achievements .content .scroll table td p:nth-of-type(1) {text-transform: uppercase; font-variant: small-caps;}
+.achievements .content .scroll table td p:nth-of-type(2) {}
+
+.achievements .content p:last-of-type {margin:8px 0px; font-size: 0.8em; font-weight: bolder;}
+.achievements .content p:last-of-type input {-webkit-appearance: none;
+margin: 0px; border: 1px inset; border-color: #ccc #bbb #bbb #ccc;
+padding: 5px;
+background-color: #666; color: white;}
+.achievements .content p:last-of-type input:checked{ background: url(images/checkbox1.png);
+    background-size: contain;
+}
+
+.achievements .content button {float: right; margin-right: 0; margin-top: -25px;}
