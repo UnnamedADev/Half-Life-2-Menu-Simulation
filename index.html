@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>v0.2.5 - Half Life 2 Menu Simulation</title>
+    <title>v0.2.6 - Half Life 2 Menu Simulation</title>
     <link rel="stylesheet" href="style.css">
     <script src="jquery-3.2.1.min.js"></script>
     <script src="script.js"></script>
@@ -230,15 +230,102 @@
         </div>
         <div class="content">
             <ul>
-                <li><a>Difficulty</a></li>
+                <li class="activeLi"><a>Difficulty</a></li>
                 <li><a>Keyboard</a></li>
                 <li><a>Mouse</a></li>
                 <li><a>Audio</a></li>
                 <li><a>Video</a></li>
             </ul>
             <div class="dynamicOptions">
-                
+                <!-- difficulty -->
+                <div class="do do_difficulty">
+                    <h1>Combat difficulty</h1>
+              
+                    <input type="radio" name="difficulty"> Easy
+                        <p>Enemies are easy to defeat, and the computer help you aim.</p>
+                    <input type="radio" name="difficulty"> Normal
+                        <p>Challenging enemies; your weapons do normal damage.</p>
+                    <input type="radio" name="difficulty"> Hard
+                        <p>Enemies are very tough; your weapons are less effective.</p>
+                </div>
+                <!-- keyboard -->
+                <div class="do do_keyboard">
+                    <div class="scroll scrollDiv">
+                        <table>
+                            <tbody>
+                                <tr>
+                                    <th>movement</th>
+                                    <th>key/button</th>
+                                </tr>
+                                <tr>
+                                    <td>move forward</td>
+                                    <td>w</td>
+                                </tr>
+                                <tr>
+                                    <td>move back</td>
+                                    <td>s</td>
+                                </tr>
+                                <tr>
+                                    <td>move left (strafe)</td>
+                                    <td>a</td>
+                                </tr>
+                                <tr>
+                                    <td>move right (strafe)</td>
+                                    <td>d</td>
+                                </tr>
+                                <tr>
+                                    <td>sprint (Move Quickly)</td>
+                                    <td>SHIFT</td>
+                                </tr>
+                                <tr>
+                                    <td>jump</td>
+                                    <td>SPACE</td>
+                                </tr>
+                                <tr>
+                                    <td>duck</td>
+                                    <td>CONTROL</td>
+                                </tr>
+                                
+                                <tr>
+                                    <th>combat</th>
+                                    <th>key/button</th>
+                                </tr>
+                                <tr>
+                                    <td>primary attack</td>
+                                    <td>MOUSE1</td>
+                                </tr>
+                                <tr>
+                                    <td>secondary attack</td>
+                                    <td>MOUSE2</td>
+                                </tr>
+                                <tr>
+                                    <td>reload weapon</td>
+                                    <td>r</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    <button class="steamButton">Use Defaults</button>
+                    <button class="steamButton activeButton">Advanced...</button>
+                    <button class="steamButton blackButton">Edit key</button>
+                    <button class="steamButton blackButton">Clear key</button>
+                </div>
+                <!-- mouse -->
+                <div class="do do_mouse">
+                    
+                </div>
+                <!-- audio -->
+                <div class="do do_audio">
+                    
+                </div>
+                <!-- video -->
+                <div class="do do_video">
+                    
+                </div>
             </div>
+            <button class="steamButton">Apply</button>
+            <button class="steamButton">Cancel</button>
+            <button class="steamButton activeButton">OK</button>
         </div>
     </div>
 </body>

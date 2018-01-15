@@ -53,6 +53,7 @@ body {
 .activeButton {
     box-shadow: 0px 0px 0px 1px rgba(100,100,100,0.75);
 }
+.blackButton {color: black;}
 .title {text-transform: uppercase; font-variant: small-caps; font-size: 0.75em;}
 .scroll::-webkit-scrollbar {
     width: 1em;
@@ -165,18 +166,72 @@ background-color: #666; color: white;}
 .achievements .content p:last-of-type input:checked{ background: url(images/checkbox1.png);
     background-size: contain;}
 
-.achievements .content button {float: right; margin-right: 0; margin-top: -25px;}
+.achievements .content button {
+    float: right; margin-right: 0; margin-top: -25px;}
 
+.options .content {color: #ddd;}
 .options .content ul {list-style-type: none; padding: 0;}
 .options .content ul > li {float: left;}
 .options .content ul > li > a {
     border: 1px outset;
     border-color: #ccc #bbb #bbb #ccc;
     border-radius: 2px;
-    padding: 3px 30px 3px 5px;}
-
-.options .content .dynamicOptions {width: 400px; height: 300px; float: left;
-border: 1px outset;
+    padding: 3px 20px 3px 5px;
+    font-size: 0.9em;}
+.options .content .activeLi > a{border-bottom: 0px;}
+.options .content .dynamicOptions {
+width: 550px;
+    border-top: 0px outset;
+    border-bottom: 1px outset;
+    border-left: 1px outset;
+    border-right: 1px outset;
 border-color: #ccc #bbb #bbb #ccc;
 border-radius: 2px;
-padding: 3px 30px 3px 5px;}
+padding: 0px 0px 0px 0px;
+margin-top: 38px; }
+.options .content .steamButton {
+    float: right;
+    margin: 5px 7px 10px 0px;}
+.do {
+    display: none;
+    box-sizing: border-box;
+    margin:0; padding:20px;
+    width: 100%;
+    font-size: 0.9em;}
+.do_difficulty {display: none;}
+.do_difficulty h1 {
+    font-size: 1em; font-weight: normal;
+    margin:0px 0px 15px 0px; 
+    padding:0px 0px 0px 10px;}
+.do_difficulty p {
+    box-sizing: border-box;
+    margin:0px 0px 20px 0px; 
+    padding:0px 0px 0px 30px;
+    white-space: nowrap;
+    width: auto;}
+.do_difficulty p:last-child {margin-bottom: 70px !important;}
+.do_difficulty input {-webkit-appearance: none;
+margin: 0px; 
+border: 1px inset; border-color: #ccc #bbb #bbb #ccc;
+border-radius: 100%;
+padding: 5px;
+background-color: #666; color: white;}
+.do_difficulty input:checked {background: url(images/radio1.png);
+    background-size: contain;}
+
+.do_keyboard {padding: 10px 10px 0px 10px !important; display: block; text-align: center;}
+.do_keyboard table {width: 98%; text-align: left; border-spacing: 0px; margin-left: 1%;}
+.do_keyboard table th {
+    padding-top: 15px;
+    text-transform: uppercase;         
+    font-variant: small-caps; 
+    font-size: 0.8em;
+    border-bottom: 1px solid black;}
+.do_keyboard table td{
+    font-size: 1em;}
+.do_keyboard table tr td:first-child::first-letter{
+    text-transform: uppercase;}
+.do_keyboard .steamButton {display: inline-block ;
+    float: none !important;
+    width: 23%;
+    margin: 10px 4px 10px 4px !important;}
